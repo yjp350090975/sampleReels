@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<META NAME="Author" CONTENT="oscar999"> 
+		<meta name="format-detection" content="telephone=no" />
+		<meta content="email=no" name="format-detection" />
+		
+		<title>无标题文档</title>
+		<link href="css/index.css" rel="stylesheet" type="text/css" />
+		<script src="js/index.js"></script>
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript">
+		function changefontSize() {
+			var dw = document.documentElement.clientWidth;var fontSize=(dw/650)*30+"px";
+			if(dw>=650){dw=650;}var fontSize=(dw/650)*30+"px";
+			document.getElementsByTagName("html")[0].style.fontSize=fontSize;
+
+		//新增加的开始
+			function contentWidth(val1,val2){
+				this.val1 = $(val1);
+				this.val2 = $(val2);
+				this.valW = this.val1.width();
+			}
+			contentWidth.prototype.changeLeft=function(){
+				this.val2.css("margin-left",-(this.valW/2)+"px");
+			}
+
+			var goodsWidth = new contentWidth(".goods",".goods");
+			var evaluateWidth = new contentWidth(".evaluate",".evaluate");
+			var storeWidth = new contentWidth(".store",".store");
+			var footWidth = new contentWidth(".goods",".foot");
+
+			goodsWidth.changeLeft();
+			evaluateWidth.changeLeft();
+			storeWidth.changeLeft();
+			footWidth.changeLeft();
+
+		}
+		$(function(){
+			changefontSize();
+		});
+		window.onresize = changefontSize;
+		</script>
+		<style>
+			body{max-width: 650px;margin: 0 auto;}
+			.goods,.evaluate,.store,.foot{max-width: 650px;left:50%;}
+			.shopping-list{max-width: 650px;}
+			.box{overflow-x: hidden;}
+			.goods-sidebar li{list-style: none;}
+			
+			.business-discount{margin-bottom: 2.4rem;}
+			.foot span {line-height: 2.4rem;}
+		</style>
+		<!-- 新增加的结束 -->
+</head>
+
+<body>
+<div class="top" id="top">
+    <div class="topcontainer flex">
+        <img class="topcontainer-logo"  src="" />
+        <a class="topcontainer-wapper flexfull">
+            <div class="flex flexcenter">
+                <p class="flexfull topcontainer-wapper-title">好想吃冒菜</p>
+               <img class="topcontainer-wapper-icon" src=""  />
+            </div>
+            <div class="flex flexcenter topcontainer-wapper-margintop">
+               <!-- <img class="topcontainer-wapper-smallicon" src="images/man.png" />
+               <img class="topcontainer-wapper-smallicon" src="images/man.png" />
+               <img class="topcontainer-wapper-smallicon" src="images/man.png" />
+               <img class="topcontainer-wapper-smallicon" src="images/man.png" />
+               <img class="topcontainer-wapper-smallicon" src="images/man.png" />  -->
+               <span class="topcontainer-wapper-smallfont fn-coloryellow marginleft-1">4.9</span>
+               <span class="topcontainer-wapper-smallfont fn-colorgray marginleft-2">月销241笔</span>
+            </div>
+           <div>
+                <span class="topcontainer-wapper-smallfont fn-colorgray split">配送6元</span>
+                <span class="topcontainer-wapper-smallfont fn-colorgray split">起送<span id="starting-price">40</span>元</span>
+                <span class="topcontainer-wapper-smallfont fn-colorgray split">预计30分钟送达</span> 
+                <span class="topcontainer-wapper-smallfont fn-colorgray split">满20元免费配送</span> 
+           </div>
+        </a> 
+    </div>
+   
+   <div class="flex topnavcontainer" id="tab-list">
+  
+        <div class="flexfull topnavcontainer-nav cur">商品</div>
+        <div class="flexfull topnavcontainer-nav">评价</div>
+        <div class="flexfull topnavcontainer-nav">店铺</div>
+	</div>     
+ 
+   <div id="content">        
+       <div class="goods">
+          	<div class="box">
+				<div class="goods-sidebar" id="goods-sidebar">
+					<ul>
+						<li><a href="#item1" class="current">折扣商品</a></li>
+						<li><a href="#item2">牛魔王煲仔饭</a></li>
+						<li><a href="#item3">夏季饮品</a></li>
+					
+					</ul>
+				</div>
+			</div>
+			<div class="goods-add">
+				<div id="item1" class="goods-add-box">	
+					<h5 class="goods-add-box-top">折扣商品</h5>
+					<div class="goods-add-box-bottom">
+						<img src="images/good.png">
+						<div class="goods-add-box-bottom-title">
+							<p class="p1">萝卜牛腩煲仔饭+卤蛋+饮料</p>
+							<p class="p2">月售159</p>
+							<div class="price">￥
+								<span class="price-num">10.5</span>					
+								<span class="fen">/份</span>
+								<span class="reduce">-</span>
+								<span class="num" data-goodsId="a1">0</span>
+								<span class="plus">+</span>
+							</div>		
+						</div>
+					</div><!-- goods-add-box-bottom结束 -->
+					<div class="goods-add-box-bottom">
+						<img src="images/good.png">
+						<div class="goods-add-box-bottom-title">
+							<p class="p1">萝卜牛腩煲仔饭+卤蛋</p>
+							<p class="p2">月售159</p>
+							<div class="price">￥
+								<span class="price-num">20.5</span>
+								<span class="fen">/份</span>
+								<span class="reduce">-</span>
+								<span class="num" data-goodsId="a2">0</span>
+								<span class="plus">+</span>
+							</div>		
+						</div>
+					</div><!-- goods-add-box-bottom结束 -->
+
+				</div><!-- goods-add-box结束 -->
+
+				<div id="item2" class="goods-add-box">	
+					<h5 class="goods-add-box-top q1">牛魔王煲仔饭</h5>
+					<div class="goods-add-box-bottom">
+						<img src="images/good.png">
+						<div class="goods-add-box-bottom-title">
+							<p class="p1">萝卜牛腩煲仔饭+</p>
+							<p class="p2">月售159</p>
+							<div class="price">￥
+								<span class="price-num">30.5</span>
+								<span class="fen">/份</span>
+								<span class="reduce">-</span>
+								<span class="num" data-goodsId="a3">0</span>
+								<span class="plus">+</span>
+							</div>		
+						</div>
+					</div><!-- goods-add-box-bottom结束 -->
+					<div class="goods-add-box-bottom">
+						<img src="images/good.png">
+						<div class="goods-add-box-bottom-title">
+							<p class="p1">萝卜牛</p>
+							<p class="p2">月售159</p>
+							<div class="price">￥
+								<span class="price-num">14.5</span>
+								<span class="fen">/份</span>
+								<span class="reduce">-</span>
+								<span class="num" data-goodsId="a4">0</span>
+								<span class="plus">+</span>
+							</div>		
+						</div>
+					</div><!-- goods-add-box-bottom结束 -->
+
+				</div><!-- goods-add-box结束 -->
+				<div id="item3" class="goods-add-box">	
+					<h5 class="goods-add-box-top q1">夏季饮品</h5>
+					<div class="goods-add-box-bottom">
+						<img src="images/good.png">
+						<div class="goods-add-box-bottom-title">
+							<p class="p1">萝卜牛腩煲仔饭+卤蛋+饮料</p>
+							<p class="p2">月售159</p>
+							<div class="price">￥
+								<span class="price-num">14.5</span>
+								<span class="fen">/份</span>
+								<span class="reduce">-</span>
+								<span class="num" data-goodsId="a5">0</span>
+								<span class="plus">+</span>
+							</div>		
+						</div>
+					</div><!-- goods-add-box-bottom结束 -->
+					<div class="goods-add-box-bottom">
+						<img src="images/good.png">
+						<div class="goods-add-box-bottom-title">
+							<p class="p1">萝卜牛腩煲仔饭+卤蛋+饮料</p>
+							<p class="p2">月售159</p>
+							<div class="price">￥
+								<span class="price-num">14.5</span>
+								<span class="fen">/份</span>
+								<span class="reduce">-</span>
+								<span class="num" data-goodsId="a6">0</span>
+								<span class="plus">+</span>
+							</div>		
+						</div>
+					</div><!-- goods-add-box-bottom结束 -->
+
+				</div><!-- goods-add-box结束 -->	
+			</div><!-- goods-add结束 -->
+			<div class="foot">
+		   		<img class="footimg1" src="images/shoppingcart.png">
+		   		<img class="footimg2" src="images/shoppingcartshow.png">
+		   		<div class="purchase-times">0</div>
+				<div class="foot-price">购物车空空如也</div>
+				<div class="foot-price-show">共￥<big class="total">0</big></div>
+				<div class="foot-but">还差￥<i class="how-much-money">20</i></div>
+				<div class="foot-but-show">选好了</div>
+		   </div>
+			<div class="shopping-list">
+				<div class="shopping-list-top">餐盒费：￥1<span>清空购物车</span></div>
+				<div class="shopping-list-bottom">
+
+<!-- 					<div class="shopping-list-bottom-box">
+						<span class="ll">饮料</span>
+						<div class="price">￥<span class="price-num">14.5</span>
+							<span class="reduce">-</span>
+							<span class="num">0</span>
+							<span class="plus">+</span>
+						</div>	
+					</div> -->
+
+				</div>
+	   		</div><!-- shopping-list结束 -->
+
+       </div>
+       <div class="hide evaluate">
+	       	<div class="box2">
+				<div class="name-time">我是吃货<span>2016.06.24</span></div>
+				<div>
+				   <img class="topcontainer-wapper-smallicon" src="images/man.png" />
+		           <img class="topcontainer-wapper-smallicon" src="images/man.png" />
+		           <img class="topcontainer-wapper-smallicon" src="images/man.png" />
+		           <img class="topcontainer-wapper-smallicon" src="images/man.png" />
+		           <img class="topcontainer-wapper-smallicon" src="images/man.png" /> 
+				</div>
+				<p>配送超级给力，非常棒，赞一个，商家也很好，都很满意！美团就是给力，味道赞物美简练准时送达货品保存完好</p>
+	       </div>
+	       <div class="box2">
+				<div class="name-time">我是吃货<span>2016.06.24</span></div>
+				<div>
+				   <img class="topcontainer-wapper-smallicon" src="images/man.png" />
+		           <img class="topcontainer-wapper-smallicon" src="images/man.png" />
+		           <img class="topcontainer-wapper-smallicon" src="images/man.png" />
+		           <img class="topcontainer-wapper-smallicon" src="images/man.png" />
+		           <img class="topcontainer-wapper-smallicon" src="images/man.png" /> 
+				</div>
+				<p>配送超级给力，非常棒，赞一个，商家也很好，都很满意！美团就是给力，味道赞物美简练准时送达货品保存完好</p>
+	       </div>
+	       <div class="box2">
+				<div class="name-time">我是吃货<span>2016.06.24</span></div>
+				<div>
+				   <img class="topcontainer-wapper-smallicon" src="images/man.png" />
+		           <img class="topcontainer-wapper-smallicon" src="images/man.png" />
+		           <img class="topcontainer-wapper-smallicon" src="images/man.png" />
+		           <img class="topcontainer-wapper-smallicon" src="images/man.png" />
+		           <img class="topcontainer-wapper-smallicon" src="images/man.png" /> 
+				</div>
+				<p>配送超级给力，非常棒，赞一个，商家也很好，都很满意！美团就是给力，味道赞物美简练准时送达货品保存完好</p>
+	       </div>
+	       <div class="box2">
+				<div class="name-time">我是吃货<span>2016.06.24</span></div>
+				<div>
+				   <img class="topcontainer-wapper-smallicon" src="images/man.png" />
+		           <img class="topcontainer-wapper-smallicon" src="images/man.png" />
+		           <img class="topcontainer-wapper-smallicon" src="images/man.png" />
+		           <img class="topcontainer-wapper-smallicon" src="images/man.png" />
+		           <img class="topcontainer-wapper-smallicon" src="images/man.png" /> 
+				</div>
+				<p>配送超级给力，非常棒，赞一个，商家也很好，都很满意！美团就是给力，味道赞物美简练准时送达货品保存完好</p>
+	       </div>
+	       <div class="box2">
+				<div class="name-time">我是吃货<span>2016.06.24</span></div>
+				<div>
+				   <img class="topcontainer-wapper-smallicon" src="images/man.png" />
+		           <img class="topcontainer-wapper-smallicon" src="images/man.png" />
+		           <img class="topcontainer-wapper-smallicon" src="images/man.png" />
+		           <img class="topcontainer-wapper-smallicon" src="images/man.png" />
+		           <img class="topcontainer-wapper-smallicon" src="images/man.png" /> 
+				</div>
+				<p>配送超级给力，非常棒，赞一个，商家也很好，都很满意！美团就是给力，味道赞物美简练准时送达货品保存完好</p>
+	       </div>
+	       <div class="box2">
+				<div class="name-time">我是吃货<span>2016.06.24</span></div>
+				<div>
+				   <img class="topcontainer-wapper-smallicon" src="images/man.png" />
+		           <img class="topcontainer-wapper-smallicon" src="images/man.png" />
+		           <img class="topcontainer-wapper-smallicon" src="images/man.png" />
+		           <img class="topcontainer-wapper-smallicon" src="images/man.png" />
+		           <img class="topcontainer-wapper-smallicon" src="images/man.png" /> 
+				</div>
+				<p>配送超级给力，非常棒，赞一个，商家也很好，都很满意！美团就是给力，味道赞物美简练准时送达货品保存完好</p>
+	       </div>
+       </div><!-- evaluate结束 -->
+       <div class="hide store">
+			<div class="business-title">
+				<h3>牛魔王煲仔饭</h3>
+				<p>亲们,为了方便您的点餐，牛魔王煲仔饭到美团来报到了，欢迎亲们光临小店哟:)</p>
+			</div>
+			<div class="business-information">
+				<ul>
+					<li>
+						<img src="images/phone.png">配送时间:10:00-15:00,16:20-21:00
+					</li>
+					<li>
+						<img src="images/location.png">商家地址:董家湾南街2号
+					</li>
+					<li>
+						<img src="images/serve.png">由商家提供配送服务
+					</li>
+				</ul>
+			</div>
+			<div class="business-discount">
+				<ul>
+					<li>满10减10；满25减15；满50减28（在线支付专享）</li>
+					<li>新用户立减10元（在线支付专享）</li>
+					<li>折扣商品5折起（在线支付专享）</li>
+					<li>赠送餐上楼（在线支付专享）</li>
+					<li>下单多减1元，限08：00-10：00</li>
+					<li>由美团专送提供高品质送餐服务</li>
+					<li>该商家支持在线支付</li>
+				</ul>
+			</div>
+			<div class="foot">
+				<p>举报商家作弊领红包</p><span class="tip">举报商家</span>
+			</div>
+       </div><!-- store结束 -->
+   </div><!-- conten结束 -->
+</div>
+<div class="zhezhao"></div>
+</body>
+</html>
